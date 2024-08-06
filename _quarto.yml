@@ -1,0 +1,78 @@
+execute:
+  freeze: auto  # re-render only when source changes
+
+project: 
+  type: website
+  output-dir: docs
+  render:
+    - "index.qmd"
+    - "content/*.qmd"
+    - "!content/day19-testing.qmd"
+    - "!content/day8b.qmd"
+    - "!content/day2b.qmd"
+
+website: 
+  page-navigation: true
+  title: "Eli's 30 day map challenge" 
+  site-url: "https://eeholmes.github.io/30Maps/" 
+  repo-url: "https://github.com/eeholmes/30Maps"
+  repo-actions: [edit, source, issue]
+  favicon: images/favicon.ico
+  
+  page-footer:
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    left: "&copy; CC-1.0"
+  
+  sidebar:
+    background: "#D9E3E4"
+    logo: "eeholmes-logo.gif"
+    favicon: images/favicon.ico
+    pinned: true
+    align: center
+    tools: 
+      - icon: globe
+        href: https://eeholmes.github.io
+        text: "eeholmes webpage"
+      - icon: github
+        href: https://github.com/eeholmes
+        text: "eeholmes github"
+
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: content/day2.qmd
+        text: Day 2 lines
+      - href: content/day7.qmd
+        text: Day 7 raster
+      - href: content/day8.qmd
+        text: Day 8 osm
+      - href: content/day11.qmd
+        text: Day 11 red
+      - href: content/day16.qmd
+        text: Day 16 minimal
+      - href: content/day18.qmd
+        text: Day 18 blue
+      - href: content/day18b.qmd
+        text: Day 18 blue 2
+      - href: content/day19.qmd
+        text: Day 19 globe
+      - href: content/day20.qmd
+        text: Day 20 favorite
+      - href: content/day23.qmd
+        text: Day 23 movement
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss] 
+      dark: [cosmo, theme-dark.scss]
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+filters:
+  - include-files.lua
+  - quarto
